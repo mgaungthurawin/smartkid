@@ -13,11 +13,11 @@
                         <i class="fas fa-info-circle"></i>
                     </a>
                 </div>
-                <div class="top-menu-center"><a class="logo" href="educational-videos.html">ပညာပေးရုပ်သံ</a></div>
+                <div class="top-menu-center"><a class="logo" href="#">ပညာပေးရုပ်သံ</a></div>
                 <div class="top-menu-right">
                     <a class="menu-search" href="javascript:void(0)"><i class="fas fa-search"></i></a>
-                    <a class="top-menu-close" href="educational-videos.html#"><i class="fas fa-times"></i></a>
-                    <a class="top-menu-right-open active" href="educational-videos.html#"><i
+                    <a class="top-menu-close" href="#"><i class="fas fa-times"></i></a>
+                    <a class="top-menu-right-open active" href="#"><i
                             class="fas fa-bars"></i></a>
                 </div>
 

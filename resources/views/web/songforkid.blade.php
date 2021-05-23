@@ -29,18 +29,18 @@
 
     </head>
 <body>
-@include('web.layout.menu');
+@include('web.layout.menu')
 <?php
-    $url = asset('web/images/bg-4.png');
+    $url = asset('web/images/bg-4.png')
 ?>
 
 
 </header>
         <div class="page-content">
             <div class="page-head py-3 bg-green"
-                 style="background-image:url(<?php echo $url; ?>);background-position:left top -50px; background-blend-mode: multiply">
+                 style="background-image:url(<?php echo $url; ?>)background-position:left top -50px; background-blend-mode: multiply">
                 <img class="page-head__icon page-head__icon-lg ml-auto d-table mt-3 mr-3"
-                     src="images/icon-3.svg"></div>
+                     src="{{ asset('web/images/icon-3.svg') }}"></div>
             <div class="page-songs pb-3">
                 <section>
                     <div class="container-fluid">
