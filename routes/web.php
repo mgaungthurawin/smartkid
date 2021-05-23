@@ -11,14 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-	$array = json_decode(MENU, TRUE);
-	$page = json_decode(PAGE, TRUE);
-	$array = $page[14];
-	foreach ($array as $key => $a) {
-		echo $a['param'];
-		echo '<br/>';
-	}
+Route::get('/', 'WebController@landing');
+Route::get('/categories', 'WebController@categories');
+Route::get('/horoscope', 'WebController@horoscope');
+Route::get('/horoscope/{type}', 'WebController@horoscopeType');
+Route::get('/myprofile', 'WebController@profile');
+Route::get('/educationvideo', 'WebController@educationvideo');
+Route::get('/educationvideo/{type}', 'WebController@educationvideoType');
+Route::get('/health', 'WebController@health');
+Route::get('/health/{type}', 'WebController@healthType');
+Route::get('/faq', 'WebController@faq');
+Route::get('/storyforkid', 'WebController@storyforkid');
+Route::get('/storyforkid/{type}', 'WebController@storyforkidType');
+Route::get('/songforkid', 'WebController@songforkid');
 
-    // return view('welcome');
-});
