@@ -8,7 +8,7 @@
  */
 
 define('LARAVEL_START', microtime(true));
-define('KID_MYMPORTAL', 'http://localhost:9000?signature=11111');
+define('KID_MYMPORTAL', 'http://mymportals.com/?signature=11111');
 
 /*
 |--------------------------------------------------------------------------
