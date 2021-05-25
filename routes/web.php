@@ -13,7 +13,7 @@
 
 Route::get('/', 'WebController@landing');
 
-Route::group(['middleware' => ['signature']], function () {
+// Route::group(['middleware' => ['signature']], function () {
 	Route::get('/categories', 'WebController@categories');
 	Route::get('/horoscope', 'WebController@horoscope');
 	Route::get('/horoscope/{type}', 'WebController@horoscopeType');
@@ -30,5 +30,5 @@ Route::group(['middleware' => ['signature']], function () {
 	Route::post('profile', 'WebController@postProfile');
 	Route::get('games', 'WebController@games');
 	Route::get('braintester', 'WebController@braintester');
-});
+// });
 
