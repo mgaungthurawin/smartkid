@@ -39,7 +39,7 @@
         <div class="page">
             <header class="row m-0 fixed-header top-menu bg-yellow">
                 <div class="top-menu-left">
-                    <a class="top-menu-back active" href="{{ url('cagegories') }}">
+                    <a class="top-menu-back active" href="{{ url('categories') }}">
                         <i class="fas fa-arrow-left"></i></a>
                     <a class="top-menu-left-open" href="{{ url('faq') }}">
                         <i class="fas fa-info-circle"></i>

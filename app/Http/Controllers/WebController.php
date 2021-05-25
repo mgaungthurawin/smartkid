@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Session;
+use App\Model\Kid;
+use Alert;
 
 class WebController extends Controller
 {
@@ -17,9 +20,6 @@ class WebController extends Controller
     }
     public function horoscopeType($type) {
     	return view("web.".$type);
-    }
-    public function profile() {
-    	return view('web.profile'); 
     }
     public function educationvideo() {
     	return view('web.educationvideo');
@@ -44,6 +44,35 @@ class WebController extends Controller
     }
     public function songforkid() {
     	return view('web.songforkid');
+    }
+
+    public function games() {
+        return view('web.games');
+    }
+
+    public function braintester() {
+        return view('web.braintester');   
+    }
+
+    public function profile() {
+        $customer_id = Session::get('user_id');
+        $kid = Kid::where('customer_id', $customer_id)->first();
+        return view('web.profile', compact('kid')); 
+    }
+
+    public function postProfile(Request $request) {
+        $customer_id = Session::get('user_id');
+        $data = $request->all();
+        $data['customer_id'] = $customer_id;
+        $kid = Kid::where('customer_id', $customer_id)->first();
+        if(empty($kid)) {
+            Kid::create($data);
+            Alert::success('successfull created profile');
+            return redirect()->back();
+        }
+        Kid::find($kid->id)->update($data);
+        Alert::success('successfull updated profile');
+        return redirect()->back();
     }
 
 }

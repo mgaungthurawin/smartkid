@@ -11,7 +11,7 @@
             <p class="pb-3 pt-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem a eligendi deleniti aliquam quo doloremque, corporis consectetur nobis nemo eveniet temporibus! Culpa in rem vel explicabo, quasi eligendi quas dolore?
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorem a eligendi deleniti aliquam quo doloremque, corporis consectetur nobis nemo eveniet temporibus! Culpa in rem vel explicabo, quasi eligendi quas dolore
             </p>
-            <button class="btn btn-primary bg-green">Next</button>
+            <button class="btn btn-primary bg-green"><a href="{{ KID_MYMPORTAL }}">Next</a></button>
         </div>
         </div>
     </div>
