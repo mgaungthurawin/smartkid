@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('test', function () {
+	return config('story');
+});
+
 Route::get('/', 'WebController@landing');
 
 Route::group(['middleware' => ['cors']], function () {
