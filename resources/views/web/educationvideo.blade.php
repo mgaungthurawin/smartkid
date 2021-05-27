@@ -32,7 +32,22 @@
                     <div class="container-fluid">
                         <div class="tab-menu mb-2"></div>
                         <div class="tab-content" id="example-tabContent">
-                            <a class="section-videos-item shadow d-block mb-3" href="{{ url('educationvideo/vehicles') }}">
+                            <?php
+                                $videos = config('education');
+                            ?>
+
+                            @foreach($videos as $key => $video)
+                                <a class="section-videos-item shadow d-block mb-3" href="{{ url('educationvideo/'.$key.'/detail') }}">
+                                    <div class="section-videos-item__picture">
+                                        <img src="{{ asset($video['image']) }}">
+                                    </div>
+                                    <div class="section-videos-item__title bg-danger text-white p-2 w-100">
+                                        ယာဉ်များအား လေ့လာသင်ယူမှတ်သားခြင်း
+                                    </div>
+                                </a>
+                            @endforeach
+
+                            {{--<a class="section-videos-item shadow d-block mb-3" href="{{ url('educationvideo/vehicles') }}">
                                 <div class="section-videos-item__picture">
                                     <img src="{{ asset('web/storage/videos/old/vehicles_1.png') }}">
                                 </div>
@@ -90,7 +105,7 @@
                                 <div class="section-videos-item__title bg-danger text-white p-2 w-100">
                                     အရေအတွက်များအား လေ့လာသင်ယူမှတ်သားခြင်း
                                 </div>
-                            </a>
+                            </a>--}}
 
 
                             <div class="tab-pane fade show active" id="example-1" role="tabpanel"

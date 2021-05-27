@@ -21,27 +21,13 @@ class WebController extends Controller
     public function horoscopeType($type) {
     	return view("web.".$type);
     }
-    public function educationvideo() {
-    	return view('web.educationvideo');
-    }
-    public function educationvideoType($type) {
-    	return view("web.".$type);
-    }
-    public function health() {
-    	return view('web.health');
-    }
-    public function healthType($type) {
-    	return view("web.".$type);
-    }
+
+
     public function faq() {
     	return view('web.faq');
     }
-    public function storyforkid() {
-    	return view('web.storyforkid');	
-    }
-    public function storyforkidType($type) {
-    	return view("web.".$type);
-    }
+    
+
     public function songforkid() {
     	return view('web.songforkid');
     }
@@ -73,6 +59,31 @@ class WebController extends Controller
         Kid::find($kid->id)->update($data);
         Alert::success('successfull updated profile');
         return redirect()->back();
+    }
+
+    public function health() {
+        $healths = config('health');
+        return view('web.health');
+    }
+    public function healthDetail($id) {
+        $health = config('health')[$id];
+        return view("web.healthdetail", compact('health'));
+    }
+
+    public function storyforkid() {
+        return view('web.storyforkid'); 
+    }
+    public function storyforkidDetial($id) {
+        $story = config('story')[$id];
+        return view("web.storydetail", compact('story'));
+    }
+
+    public function educationvideo() {
+        return view('web.educationvideo');
+    }
+    public function educationvideoDetail($id) {
+        $video = config('education')[$id];
+        return view("web.educationdetail", compact('video', 'id'));
     }
 
 }

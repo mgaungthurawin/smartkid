@@ -51,25 +51,17 @@
                     <a class="top-menu-right-open active"
                         href="#"><i class="fas fa-bars"></i></a>
                 </div>
-
-
-
-
-
             </header>
-            
             <div class="page-content">
                 <div class="page-video">
-                    <video width="100%" height="260px" poster="{{ asset('web/storage/videos/old/fruits_1.png') }}" controls class="player">
-                        <source src="{{ asset('web/storage/videos/MM_Fruits_1080.mov') }}" type="video/mp4">
-                        <source src="{{ asset('web/storage/videos/MM_Fruits_1080.ogg') }}" type="video/ogg">
+                    <video width="100%" height="260px" poster="{{ asset($video['image']) }}" controls>
+                        <source src="{{ asset($video['video']) }}" type="video/mp4">
                     </video>
                     <section class="border-bottom py-3" id="detail">
                         <div class="container-fluid">
                             <div class="d-flex justify-content-between align-items-start flex-wrap">
                                 <div class="flex-1 mr-2">
-                                    <h1 class="h5 page-video__title mb-2 font-weight-bold">အသီးများအား
-                                        လေ့လာသင်ယူမှတ်သားခြင်း</h1>
+                                    <h1 class="h5 page-video__title mb-2 font-weight-bold">{{ $video['title'] }}</h1>
                                     <h2 class="h6 page-video__sub-title mb-0"></h2>
                                 </div>
                                 <div class="page-video-buttons d-flex align-items-center">
@@ -88,9 +80,27 @@
                         </div>
                     </section>
                     <section class="videos py-1 col-md-6 m-auto" id="otherVideos">
+                        <?php
+                            $videos = config('education');
+                            unset($videos[$id]);
+                        ?>
 
-                        <div class="border-bottom p-2 ">
-                            <a class="section-videos-item  px-1" href="{{ url('educationvideo/color') }}">
+                        @foreach($videos as $key => $video)
+                            <div class="border-bottom p-2 ">
+                                <a class="section-videos-item  px-1"
+                                    href="{{ url('educationvideo/'.$key.'/detail') }}">
+                                    <div class="section-videos-item__picture w-100"><img
+                                            src="{{ asset($video['image']) }}"></div>
+                                    <div class="px-3 py-1">
+                                        <div class="section-videos-item__title">{{ $video['title'] }}</div>
+                                        <div class="section-videos-item__sub-title mt-2"></div>
+                                    </div>
+                                </a>
+                            </div>
+                        @endforeach
+                        {{--<div class="border-bottom p-2 ">
+                            <a class="section-videos-item  px-1"
+                                href="{{ url('educationvideo/color') }}">
                                 <div class="section-videos-item__picture w-100"><img
                                         src="{{ asset('web/storage/videos/old/colors_1.png') }}"></div>
                                 <div class="px-3 py-1">
@@ -100,17 +110,19 @@
                             </a>
                         </div>
                         <div class="border-bottom p-2">
-                            <a class="section-videos-item  px-1" href="{{ url('educationvideo/vehicles') }}">
+                            <a class="section-videos-item  px-1"
+                                href="{{ url('educationvideo/fruit') }}">
                                 <div class="section-videos-item__picture w-100"><img
-                                        src="{{ asset('web/storage/videos/old/vehicles_1.png') }}"></div>
+                                        src="{{ asset('web/storage/videos/old/fruits_1.png') }}"></div>
                                 <div class="flex-1 px-3 py-1">
-                                    <div class="section-videos-item__title"> ယာဉ်များအား လေ့လာသင်ယူမှတ်သားခြင်း</div>
+                                    <div class="section-videos-item__title">အသီးများအား လေ့လာသင်ယူမှတ်သားခြင်း</div>
                                     <div class="section-videos-item__sub-title mt-2"></div>
                                 </div>
                             </a>
                         </div>
                         <div class="border-bottom p-2">
-                            <a class="section-videos-item  px-1" href="{{ url('educationvideo/number') }}">
+                            <a class="section-videos-item  px-1"
+                                href="{{ url('educationvideo/number') }}">
                                 <div class="section-videos-item__picture w-100"><img
                                         src="{{ asset('web/storage/videos/old/numbers_1.png') }}"></div>
                                 <div class="flex-1 px-3 py-1">
@@ -119,10 +131,10 @@
                                 </div>
                             </a>
                         </div>
-
-
+                      
+                     
                         <div class="border-bottom p-2">
-                            <a class="section-videos-item px-1" href="{{ url('educationvideo/vegetable') }}">
+                            <a class="section-videos-item px-1" href="{{ url('educationvideo/vagitable') }}">
                                 <div class="section-videos-item__picture w-100"><img
                                         src="{{ asset('web/storage/videos/old/v_vegetables_2.png') }}"></div>
                                 <div class="flex-1 px-3 py-1">
@@ -132,8 +144,8 @@
                                 </div>
                             </a>
                         </div>
-
-
+                     
+                 
                         <div class="border-bottom p-2">
                             <a class="section-videos-item px-1" href="{{ url('educationvideo/shape') }}">
                                 <div class="section-videos-item__picture w-100"><img
@@ -141,16 +153,15 @@
                                 <div class="flex-1 px-3 py-1">
                                     <div class="section-videos-item__title">ပုံသဏ္ဌာန်များကိုလေ့လာခြင်း</div>
                                     <div class="section-videos-item__sub-title mt-2">
-
+                                        
                                     </div>
                                 </div>
                             </a>
-                        </div>
-
+                        </div>--}}
+                      
                     </section>
                 </div>
             </div>
-
         </div>
     </div>
     <script src="{{ asset('web/js/jquery.min.js') }}"></script>

@@ -52,10 +52,6 @@
                     <a class="top-menu-right-open active" href="#"><i class="fas fa-bars"></i></a>
                 </div>
 
-
-
-
-
             </header>
             <div class="page-content">
                 <div class="page-head py-3 bg-yellow"
@@ -70,7 +66,22 @@
                         <div class="tab-content" id="example-tabContent">
                             <div class="tab-pane fade show active" id="example-1" role="tabpanel"
                                 aria-labelledby="example-1-tab">
-                                <a class="section-posts-item shadow d-block mb-3"
+
+                                <?php
+                                    $stories = config('story');
+                                ?>
+
+                                @foreach($stories as $key => $story)
+                                    <a class="section-posts-item shadow d-block mb-3"
+                                        href="{{ url ('storyforkid/'.$key.'/detail') }}">
+                                        <div class="section-posts-item__picture"><img src="{{ asset($story['image']) }}">
+                                        </div>
+                                        <div class="section-posts-item__title bg-yellow text-white p-2 w-100">
+                                            {{ $story['title'] }}</div>
+                                    </a>
+                                @endforeach
+
+                                {{--<a class="section-posts-item shadow d-block mb-3"
                                     href="{{ url ('storyforkid/rumpelstiltskin') }}">
                                     <div class="section-posts-item__picture"><img src="{{ asset('web/storage/articles/old/rumbel.jpg') }}">
                                     </div>
@@ -118,7 +129,7 @@
                                     </div>
                                     <div class="section-posts-item__title bg-yellow text-white p-2 w-100">
                                         လူစွမ်းကောင်းလေး ပီတာပန်</div>
-                                </a>
+                                </a>--}}
                                 <!-- <a class="section-posts-item shadow d-block mb-3" href="story-for-kids/pinnocciho.html">
                                     <div class="section-posts-item__picture"><img
                                             src="storage/articles/old/pinocchio.jpg"></div>

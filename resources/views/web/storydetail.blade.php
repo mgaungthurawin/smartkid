@@ -31,12 +31,13 @@
 </head>
 
 <body>
+    <div class="wrapper">
+        <?php
+            $url = asset('web/images/bg-7.png');
+        ?>
         @include('web.layout.menu')
-            @include('web.layout.menu')
-            <?php
-                $url = asset('web/images/bg-6.png');
-            ?>
-            <header class="row m-0 fixed-header top-menu bg-light-blue">
+        <div class="page">
+            <header class="row m-0 fixed-header top-menu bg-yellow">
                 <div class="top-menu-left">
                     <a class="top-menu-back active" href="{{ url('categories') }}">
                         <i class="fas fa-arrow-left"></i></a>
@@ -44,48 +45,52 @@
                         <i class="fas fa-info-circle"></i>
                     </a>
                 </div>
-                <div class="top-menu-center"><a class="logo" href="">ကျန်းမာရေး</a></div>
+                <div class="top-menu-center"><a class="logo" href="#">ကလေးပုံပြင်များ</a></div>
                 <div class="top-menu-right">
                     <a class="menu-search" href="javascript:void(0)"><i class="fas fa-search"></i></a>
                     <a class="top-menu-close" href="#"><i class="fas fa-times"></i></a>
                     <a class="top-menu-right-open active" href="#"><i class="fas fa-bars"></i></a>
                 </div>
             </header>
-            <div class="page-content">
-                <div class="page-head py-3 bg-light-blue" style="background-image:url(<?php echo $url; ?>);
-                 background-blend-mode: hard-light">
-                    <img class="page-head__icon page-head__icon-lg mb-n4 ml-auto d-table mt-3 mr-3"
-                        src="{{ asset('web/images/icon-5.png') }}">
-                </div>
-                <div class="page-videos pb-3">
-                    <section class="section-posts"></section>
-                    <div class="container-fluid">
-                        <div class="tab-menu mb-2"></div>
-                        <div class="tab-content" id="example-tabContent">
-                            <div class="tab-pane fade show active" id="example-1" role="tabpanel"
-                                aria-labelledby="example-1-tab">
-
-                                <?php
-                                    $healths = config('health');
-                                ?>
-
-                                @foreach($healths as $key => $health)
-                                    <a class="section-posts-item shadow d-block mb-3"
-                                        href="{{ url('health/'.$key.'/detail') }}">
-                                        <div class="section-posts-item__picture"><img
-                                                src="{{ asset($health['image']) }}"></div>
-                                        <div class="section-posts-item__title bg-light-blue text-white p-2 w-100">
-                                            {{ $health['title']}}
+            
+                        <div class="page-content">
+                            <style>
+                                .fav {
+                                    color: #fcad04;
+                                }
+                            </style>
+                            <div class="page-video">
+                                <div class="text-center">
+                                    <img class="img-responsive" src="{{ asset($story['image']) }}">
+                                </div>
+                                <section class="border-bottom py-3" id="detail">
+                                    <div class="container-fluid">
+                                        <div class="d-flex justify-content-between align-items-start flex-wrap">
+                                            <div class="flex-1 mr-2">
+                                                <h1 class="h5 page-video__title mb-2 font-weight-bold">{{ $story['title'] }}</h1>
+                                                <h2 class="h6 page-video__sub-title mb-0"></h2>
+                                            </div>
+                                            <div class="page-video-buttons d-flex align-items-center ">
+                                                <a id="favoriteBtn"
+                                                    class="favorite-btn page-video-buttons__item btn btn-light rounded-circle mr-2 active favorite-add"
+                                                    href="http://my-smartkids.com/favorites/stories-for-kids/17">
+                                                    <i class="far fa-star"></i>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </a>
-                                @endforeach
-                            </div>
-                            <div class="tab-pane fade" id="example-2" role="tabpanel" aria-labelledby="example-2-tab">
+
+                                        <div class="row mt-3">
+                                            <div class="col-12">
+                                                {!! $story['description'] !!}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+                                <script type="text/javascript"
+                                    src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5b06d274b98b9384"></script>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
     <script src="{{ asset('web/js/jquery.min.js') }}"></script>
