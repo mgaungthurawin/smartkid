@@ -66,24 +66,33 @@ class WebController extends Controller
         return view('web.health');
     }
     public function healthDetail($id) {
-        $health = config('health')[$id];
-        return view("web.healthdetail", compact('health'));
+        if(array_key_exists($id, config('health'))) {
+            $health = config('health')[$id];
+            return view("web.healthdetail", compact('health'));
+        }
+        return redirect(url('health'));
     }
 
     public function storyforkid() {
         return view('web.storyforkid'); 
     }
     public function storyforkidDetial($id) {
-        $story = config('story')[$id];
-        return view("web.storydetail", compact('story'));
+        if(array_key_exists($id, config('story'))) {
+            $story = config('story')[$id];
+            return view("web.storydetail", compact('story'));
+        }
+        return redirect(url('storyforkid'));
     }
 
     public function educationvideo() {
         return view('web.educationvideo');
     }
     public function educationvideoDetail($id) {
-        $video = config('education')[$id];
-        return view("web.educationdetail", compact('video', 'id'));
+        if(array_key_exists($id, config('education'))) {
+            $video = config('education')[$id];
+            return view("web.educationdetail", compact('video', 'id'));
+        }
+        return redirect(url('educationvideo'));
     }
 
 }
