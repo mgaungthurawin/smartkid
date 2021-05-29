@@ -32,7 +32,7 @@
 
 <body>
         @include('web.layout.menu')
-            @include('web.layout.menu')
+            
             <?php
                 $url = asset('web/images/bg-6.png');
             ?>

@@ -66,8 +66,8 @@
                                 </div>
                                 <div class="page-video-buttons d-flex align-items-center">
                                     <a class="favorite-btn page-video-buttons__item btn btn-light rounded-circle mr-2 active "
-                                        id="favoriteBtn" href="#">
-                                        <i class="far fa-star"></i>
+                                        id="favoriteBtn" href="{{ url('post/'.$id.'/education/favourite') }}">
+                                        <i class="{{$fav}} fa-star"></i>
                                     </a>
                                     <div class="page-share">
                                         <a class="page-video-buttons__item btn btn-red rounded-circle" id="shareBtn"
@@ -98,67 +98,7 @@
                                 </a>
                             </div>
                         @endforeach
-                        {{--<div class="border-bottom p-2 ">
-                            <a class="section-videos-item  px-1"
-                                href="{{ url('educationvideo/color') }}">
-                                <div class="section-videos-item__picture w-100"><img
-                                        src="{{ asset('web/storage/videos/old/colors_1.png') }}"></div>
-                                <div class="px-3 py-1">
-                                    <div class="section-videos-item__title">အရောင်များအား လေ့လာသင်ယူမှတ်သားခြင်း</div>
-                                    <div class="section-videos-item__sub-title mt-2"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="border-bottom p-2">
-                            <a class="section-videos-item  px-1"
-                                href="{{ url('educationvideo/fruit') }}">
-                                <div class="section-videos-item__picture w-100"><img
-                                        src="{{ asset('web/storage/videos/old/fruits_1.png') }}"></div>
-                                <div class="flex-1 px-3 py-1">
-                                    <div class="section-videos-item__title">အသီးများအား လေ့လာသင်ယူမှတ်သားခြင်း</div>
-                                    <div class="section-videos-item__sub-title mt-2"></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="border-bottom p-2">
-                            <a class="section-videos-item  px-1"
-                                href="{{ url('educationvideo/number') }}">
-                                <div class="section-videos-item__picture w-100"><img
-                                        src="{{ asset('web/storage/videos/old/numbers_1.png') }}"></div>
-                                <div class="flex-1 px-3 py-1">
-                                    <div class="section-videos-item__title">အရေအတွက်များအား လေ့လာသင်ယူမှတ်သားခြင်း</div>
-                                    <div class="section-videos-item__sub-title mt-2"></div>
-                                </div>
-                            </a>
-                        </div>
-                      
-                     
-                        <div class="border-bottom p-2">
-                            <a class="section-videos-item px-1" href="{{ url('educationvideo/vagitable') }}">
-                                <div class="section-videos-item__picture w-100"><img
-                                        src="{{ asset('web/storage/videos/old/v_vegetables_2.png') }}"></div>
-                                <div class="flex-1 px-3 py-1">
-                                    <div class="section-videos-item__title">ဟင်းသီးဟင်းရွက်များအား သင်ယူမှတ်သားခြင်း
-                                    </div>
-                                    <div class="section-videos-item__sub-title mt-2"></div>
-                                </div>
-                            </a>
-                        </div>
-                     
-                 
-                        <div class="border-bottom p-2">
-                            <a class="section-videos-item px-1" href="{{ url('educationvideo/shape') }}">
-                                <div class="section-videos-item__picture w-100"><img
-                                        src="{{ asset('web/storage/videos/old/figures.png') }}"></div>
-                                <div class="flex-1 px-3 py-1">
-                                    <div class="section-videos-item__title">ပုံသဏ္ဌာန်များကိုလေ့လာခြင်း</div>
-                                    <div class="section-videos-item__sub-title mt-2">
-                                        
-                                    </div>
-                                </div>
-                            </a>
-                        </div>--}}
-                      
+
                     </section>
                 </div>
             </div>
@@ -171,6 +111,7 @@
     <script src="{{ asset('web/js/amplitude.min.js') }}"></script>
     <script src="{{ asset('web/js/index.js@v=5') }}"></script>
     <script src="{{ asset('web/js/custom.js@v=5') }}"></script>
+    <script src="{{ asset('web/js/favourite.js') }}"></script>
 </body>
 
 </html>

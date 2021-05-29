@@ -90,7 +90,7 @@
     <script src="{{ asset('web/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('web/js/jquery.scrollbar.min.js') }}"></script>
     <script src="{{ asset('web/js/amplitude.min.js') }}"></script>
-    <script src="{{ asset('web/js/index.js') }}"></script>
-    <script src="{{ asset('web/js/custom.js') }}"></script>
+    <script src="{{ asset('web/js/index.js@v=5') }}"></script>
+    <script src="{{ asset('web/js/custom.js@v=5') }}"></script>
 </body>
 </html>

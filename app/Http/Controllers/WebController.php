@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use App\Model\Kid;
+use App\Model\Favourite;
 use Alert;
 
 class WebController extends Controller
@@ -42,8 +43,10 @@ class WebController extends Controller
 
     public function profile() {
         $customer_id = Session::get('user_id');
+        $videos = Favourite::where('customer_id', $customer_id)->where('type', 'education')->get();
+        $articles = Favourite::where('customer_id', $customer_id)->where('type', '<>', 'education')->get();
         $kid = Kid::where('customer_id', $customer_id)->first();
-        return view('web.profile', compact('kid')); 
+        return view('web.profile', compact('kid', 'articles', 'videos')); 
     }
 
     public function postProfile(Request $request) {
@@ -68,7 +71,8 @@ class WebController extends Controller
     public function healthDetail($id) {
         if(array_key_exists($id, config('health'))) {
             $health = config('health')[$id];
-            return view("web.healthdetail", compact('health'));
+            $fav = $this->checkFav($id, 'health');
+            return view("web.healthdetail", compact('health', 'id', 'fav'));
         }
         return redirect(url('health'));
     }
@@ -79,7 +83,8 @@ class WebController extends Controller
     public function storyforkidDetial($id) {
         if(array_key_exists($id, config('story'))) {
             $story = config('story')[$id];
-            return view("web.storydetail", compact('story'));
+            $fav = $this->checkFav($id, 'story');
+            return view("web.storydetail", compact('story', 'id', 'fav'));
         }
         return redirect(url('storyforkid'));
     }
@@ -90,9 +95,38 @@ class WebController extends Controller
     public function educationvideoDetail($id) {
         if(array_key_exists($id, config('education'))) {
             $video = config('education')[$id];
-            return view("web.educationdetail", compact('video', 'id'));
+            $fav = $this->checkFav($id, 'education');
+            return view("web.educationdetail", compact('video', 'id', 'fav'));
         }
         return redirect(url('educationvideo'));
+    }
+
+    public function postFavourite($id, $type) {
+        $customer_id = Session::get('user_id');
+        $body = config($type)[$id];
+        $favourite = Favourite::where('customer_id', $customer_id)->where('article_id', $id)->where('type', $type)->first();
+        if(empty($favourite)) {
+            $fav = new Favourite;
+            $fav->customer_id=$customer_id;
+            $fav->article_id=$id;
+            $fav->type=$type;
+            $fav->body=json_encode($body);
+            $fav->save();
+        }
+
+        $response = [];
+        $response['status'] = TRUE;
+        return $response; 
+    }
+
+    private function checkFav($id, $type) {
+        $customer_id = Session::get('user_id');
+        $favourite = Favourite::where('customer_id', $customer_id)->where('article_id', $id)->where('type', $type)->first();
+        if($favourite) {
+            return 'fas';
+        }
+
+        return 'far';
     }
 
 }

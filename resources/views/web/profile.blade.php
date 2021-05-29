@@ -81,28 +81,53 @@
                                 <div class="tab-pane fade show active" id="favorite-contents" role="tabpanel"
                                     aria-labelledby="favorite-contents-tab">
                                     <div class="row">
-                                        <div class="col-4">
-                                            <div class="section-posts-item__picture">
-                                                <a href="story-for-kids/rumpelstiltskin.html"><img
-                                                        src="storage/articles/old/rumbel.jpg" alt=""></a>
+                                        @foreach($articles as $article)
+                                            <?php $array = json_decode($article->body, TRUE); ?>
+                                            <div class="col-4">
+                                                <div class="section-posts-item__picture">
+                                                    <a href="{{ url($article->type.'/'.$article->article_id.'/detail') }}"><img src="{{ asset($array['image']) }}" alt=""></a>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="col-8 position-relative">
-                                            <a class="favorite-btn favorite-btn-profile" href="#">
-                                                <i class="far fa-star"></i>
-                                            </a>
+                                            <div class="col-8 position-relative">
+                                                <a class="favorite-btn favorite-btn-profile" href="#">
+                                                    <i class="fas fa-star"></i>
+                                                </a>
 
-                                            <div class="section-posts-item__title p-3 pl-0 pt-0 w-100">
-                                                <a href="story-for-kids/rumpelstiltskin.html">ထူးဆန်းတဲ့နာမည်နဲ့
-                                                    စွမ်းအားရှင်လူပုလေး</a>
+                                                <div class="section-posts-item__title p-3 pl-0 pt-0 w-100">
+                                                    <a href="{{ url($article->type.'/'.$article->article_id.'/detail') }}">{{ $array['title'] }}</a>
+                                                </div>
                                             </div>
-                                        </div>
+                                            <br>
+                                        @endforeach
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="favorite-videos" role="tabpanel"
                                     aria-labelledby="favorite-videos-tab">
+                                    <div class="row">
+                                    @foreach($videos as $video)
+                                        <?php $array = json_decode($video->body, TRUE); ?>
+                                        <div class="col-4">
+                                            <div class="section-posts-item__picture">
+                                                <a href="{{ url($video->type.'/'.$article->article_id.'/detail') }}"><img src="{{ asset($array['image']) }}" alt=""></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-8 position-relative">
+                                            <a class="favorite-btn favorite-btn-profile" href="#">
+                                                <i class="fas fa-star"></i>
+                                            </a>
+
+                                            <div class="section-posts-item__title p-3 pl-0 pt-0 w-100">
+                                                <a href="{{ url($video->type.'/'.$article->article_id.'/detail') }}">{{ $array['title'] }}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <br>
+                                    @endforeach
                                 </div>
                             </div>
+
+                            
+
                         </div>
                     </section>
                 </div>

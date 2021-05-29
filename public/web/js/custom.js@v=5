@@ -4,6 +4,7 @@ $.ajaxSetup({
     }
 });
 
+/*
 $(function () {
     $(document).on('click', '.favorite-btn', function () {
         var url = $(this).attr('href');
@@ -24,6 +25,7 @@ $(function () {
         return false;
     });
 });
+*/
 
 /**
  * Send Google Analytics action

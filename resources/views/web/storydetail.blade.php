@@ -73,8 +73,8 @@
                                             <div class="page-video-buttons d-flex align-items-center ">
                                                 <a id="favoriteBtn"
                                                     class="favorite-btn page-video-buttons__item btn btn-light rounded-circle mr-2 active favorite-add"
-                                                    href="http://my-smartkids.com/favorites/stories-for-kids/17">
-                                                    <i class="far fa-star"></i>
+                                                    href="{{ url('post/'.$id.'/story/favourite') }}">
+                                                    <i class="{{$fav}} fa-star"></i>
                                                 </a>
                                             </div>
                                         </div>
@@ -100,6 +100,7 @@
     <script src="{{ asset('web/js/amplitude.min.js') }}"></script>
     <script src="{{ asset('web/js/index.js@v=5') }}"></script>
     <script src="{{ asset('web/js/custom.js@v=5') }}"></script>
+    <script src="{{ asset('web/js/favourite.js') }}"></script>
 </body>
 
 </html>

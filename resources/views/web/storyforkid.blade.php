@@ -73,7 +73,7 @@
 
                                 @foreach($stories as $key => $story)
                                     <a class="section-posts-item shadow d-block mb-3"
-                                        href="{{ url ('storyforkid/'.$key.'/detail') }}">
+                                        href="{{ url ('story/'.$key.'/detail') }}">
                                         <div class="section-posts-item__picture"><img src="{{ asset($story['image']) }}">
                                         </div>
                                         <div class="section-posts-item__title bg-yellow text-white p-2 w-100">

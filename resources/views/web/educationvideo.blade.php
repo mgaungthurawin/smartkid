@@ -37,7 +37,7 @@
                             ?>
 
                             @foreach($videos as $key => $video)
-                                <a class="section-videos-item shadow d-block mb-3" href="{{ url('educationvideo/'.$key.'/detail') }}">
+                                <a class="section-videos-item shadow d-block mb-3" href="{{ url('education/'.$key.'/detail') }}">
                                     <div class="section-videos-item__picture">
                                         <img src="{{ asset($video['image']) }}">
                                     </div>
