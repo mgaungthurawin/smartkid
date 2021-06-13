@@ -119,5 +119,12 @@
 </main>
 <script src="{{ asset('web/js/jquery.min.js') }}"></script>
 <script src="{{ asset('web/js/custom.js@v=5') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document).on('click', '#subscribe-btn', function () {
+            window.location.href = 'http://localhost:8000?service_type=SMARTKID&service_id=542';
+        });
+    })
+</script>
 </body>
 </html>

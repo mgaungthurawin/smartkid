@@ -18,14 +18,6 @@ class SignatureMiddleware
     public function handle($request, Closure $next)
     {
         $data = $request->all();
-        // $array = [
-        //     'user_id' => 1
-        // ];
-        // $json = json_encode($array);
-        // $data['signature'] = Crypt::encryptString($json);
-
-        Session::put('user_id', 1);
-        
         if(Session::has('user_id')) {
             return $next($request);
         }
@@ -37,7 +29,6 @@ class SignatureMiddleware
             }
 
             $array = json_decode($decrypt, TRUE);
-            Session::put('user_id', $array['user_id']);
             Session::put('user_id', $array['user_id']);
             return $next($request);
         }
