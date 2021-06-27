@@ -191,13 +191,20 @@ function cancelSubscription() {
         return;
     }
 
-    $.post('/cancel-subscription', function (data) {
-        if (typeof data.message !== 'undefined') {
-            alert(data.message);
-        }
+    var settings = {
+      "url": "http://localhost:8000/unsubscribe",
+      "method": "GET",
+      "timeout": 0,
+    };
 
-        if (data.result) {
-            window.location.href = data.redirectionUrl;
-        }
+    $.ajax(settings).done(function (response) {
+        console.log(typeof(response));
+        if(response == "0") {
+          window.location.href = '/';
+        } else {
+            location.reload();
+        } 
+
+
     });
 }

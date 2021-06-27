@@ -15,7 +15,7 @@ Route::get('test', function () {
 	return config('story');
 });
 Route::get('/', 'WebController@landing');
-Route::group(['middleware' => ['cors', 'signature']], function () {
+Route::group(['middleware' => ['cors']], function () {
 	Route::get('/categories', 'WebController@categories');
 	Route::get('/horoscope', 'WebController@horoscope');
 	Route::get('/horoscope/{type}', 'WebController@horoscopeType');
@@ -37,6 +37,8 @@ Route::group(['middleware' => ['cors', 'signature']], function () {
 	Route::get('/education/{id}/detail', 'WebController@educationvideoDetail');
 
 	Route::get('post/{id}/{type}/favourite', 'WebController@postFavourite');
+
+	Route::get('unsubscribe', 'WebController@unsubscribe');
 
 
 });

@@ -23,7 +23,6 @@ class WebController extends Controller
     	return view("web.".$type);
     }
 
-
     public function faq() {
     	return view('web.faq');
     }
@@ -117,6 +116,33 @@ class WebController extends Controller
         $response = [];
         $response['status'] = TRUE;
         return $response; 
+    }
+
+    public function unsubscribe() {
+        $response = [];
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+          CURLOPT_URL => 'http://localhost:9000/unsubscribe',
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_ENCODING => '',
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 0,
+          CURLOPT_FOLLOWLOCATION => true,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => 'POST',
+          CURLOPT_POSTFIELDS => array(
+            'customer_id' => Session::get('user_id'),
+            'service_type' => 'SMARTKID',
+            'service_id' => '542' 
+          )
+        ));
+
+        $response = curl_exec($curl);
+        curl_close($curl);
+        Session::forget('user_id');
+        return $response;
     }
 
     private function checkFav($id, $type) {
