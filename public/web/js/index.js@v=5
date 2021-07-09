@@ -191,6 +191,8 @@ function cancelSubscription() {
         return;
     }
 
+    window.location.href = "http://mymportals.com/unsubscribe?customer_id={{ Session::get('user_id')}}&service_type=SMARTKID&service_id=9500";
+
     var settings = {
       "url": "http://mymportals.com/unsubscribe",
       "method": "GET",
