@@ -192,7 +192,7 @@ function cancelSubscription() {
     }
 
     var settings = {
-      "url": "http://localhost:8000/unsubscribe",
+      "url": "http://mymportals.com/unsubscribe",
       "method": "GET",
       "timeout": 0,
     };
