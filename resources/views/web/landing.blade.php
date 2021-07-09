@@ -122,7 +122,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $(document).on('click', '#subscribe-btn', function () {
-            window.location.href = 'http://mymportals.com?service_type=SMARTKID&service_id=542';
+            window.location.href = 'http://mymportals.com?service_type=SMARTKID&service_id=9500';
         });
     })
 </script>
