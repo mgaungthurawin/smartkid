@@ -7,6 +7,7 @@ use Session;
 use App\Model\Kid;
 use App\Model\Favourite;
 use Alert;
+use Redirect;
 
 class WebController extends Controller
 {
@@ -120,29 +121,33 @@ class WebController extends Controller
 
     public function unsubscribe() {
         $response = [];
-
-        $curl = curl_init();
-
-        curl_setopt_array($curl, array(
-          CURLOPT_URL => 'http://localhost:9000/unsubscribe',
-          CURLOPT_RETURNTRANSFER => true,
-          CURLOPT_ENCODING => '',
-          CURLOPT_MAXREDIRS => 10,
-          CURLOPT_TIMEOUT => 0,
-          CURLOPT_FOLLOWLOCATION => true,
-          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-          CURLOPT_CUSTOMREQUEST => 'POST',
-          CURLOPT_POSTFIELDS => array(
-            'customer_id' => Session::get('user_id'),
-            'service_type' => 'SMARTKID',
-            'service_id' => '542' 
-          )
-        ));
-
-        $response = curl_exec($curl);
-        curl_close($curl);
+        $customer_id = Session::get('user_id');
+        $url = 'http://mymportals.com/unsubscribe?customer_id='.$customer_id.'&service_id=9500&service_type=SMARTKID';
         Session::forget('user_id');
-        return $response;
+        return Redirect::away($url);
+        
+        // $curl = curl_init();
+
+        // curl_setopt_array($curl, array(
+        //   CURLOPT_URL => 'http://localhost:9000/unsubscribe',
+        //   CURLOPT_RETURNTRANSFER => true,
+        //   CURLOPT_ENCODING => '',
+        //   CURLOPT_MAXREDIRS => 10,
+        //   CURLOPT_TIMEOUT => 0,
+        //   CURLOPT_FOLLOWLOCATION => true,
+        //   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+        //   CURLOPT_CUSTOMREQUEST => 'POST',
+        //   CURLOPT_POSTFIELDS => array(
+        //     'customer_id' => Session::get('user_id'),
+        //     'service_type' => 'SMARTKID',
+        //     'service_id' => '542' 
+        //   )
+        // ));
+
+        // $response = curl_exec($curl);
+        // curl_close($curl);
+        // Session::forget('user_id');
+        // return $response;
     }
 
     private function checkFav($id, $type) {

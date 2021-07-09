@@ -62,7 +62,6 @@
                                 စာရင်းမှ ပယ်ဖျက်ရန်
                             </button>
                         </div>
-                        <input type="text" name="customer_id" value="{{ Session::get('user_id') }}">
                     </form>
 
                     <section id="favorites" style="margin-top: 20px; margin-bottom: 25px;">
