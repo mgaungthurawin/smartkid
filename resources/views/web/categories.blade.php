@@ -59,7 +59,7 @@
                         </div>
                                                     <div class="col-6 px-1 mb-2">
                             <a class="section-categories-item d-flex bg-6"
-                               href="{{ url('games') }}"
+                               href="{{ url('funny-games') }}"
                                style="background-image:url(../web/images/bg-14.png)">
                                 <div
                                     class="h5 text-white font-weight-bold p-3">

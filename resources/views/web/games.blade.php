@@ -65,7 +65,7 @@
                     <div class="container-fluid">
                         <br>
                         <div class="row px-2 mb-n2">
-                            <div class="col-4 px-1 mb-2"><a href="#"><img class="w-100 rounded" src="{{ asset('web/images/games/owykeo-icon-256png.png') }}"></a></div>
+                            <div class="col-4 px-1 mb-2"><a href="{{ 'games/159636b8c52583/index.html' }}"><img class="w-100 rounded" src="{{ asset('web/images/games/owykeo-icon-256png.png') }}"></a></div>
                             <div class="col-4 px-1 mb-2"><a href="#"><img class="w-100 rounded" src="{{ asset('web/images/games/icon-256-race.png') }}"></a></div>
                             <div class="col-4 px-1 mb-2"><a href="#"><img class="w-100 rounded" src="{{ asset('web/images/games/calculus.png') }}"></a></div>
                             <div class="col-4 px-1 mb-2"><a href="#"><img class="w-100 rounded" src="{{ asset('web/images/games/icon-256-zonbie-shooter.png') }}"></a></div>

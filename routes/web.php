@@ -16,7 +16,7 @@ Route::get('test', function () {
 });
 Route::get('/', 'WebController@landing');
 Route::get('/faq', 'WebController@faq');
-Route::group(['middleware' => ['cors', 'signature']], function () {
+Route::group(['middleware' => ['cors']], function () {
 	Route::get('/categories', 'WebController@categories');
 	Route::get('/horoscope', 'WebController@horoscope');
 	Route::get('/horoscope/{type}', 'WebController@horoscopeType');
@@ -24,7 +24,7 @@ Route::group(['middleware' => ['cors', 'signature']], function () {
 	Route::get('/songforkid', 'WebController@songforkid');
 	Route::get('/profile', 'WebController@profile');
 	Route::post('profile', 'WebController@postProfile');
-	Route::get('games', 'WebController@games');
+	Route::get('funny-games', 'WebController@games');
 	Route::get('braintester', 'WebController@braintester');
 	Route::get('/health', 'WebController@health');
 	Route::get('/health/{id}/detail', 'WebController@healthDetail');
