@@ -88,7 +88,7 @@
                         @foreach($videos as $key => $video)
                             <div class="border-bottom p-2 ">
                                 <a class="section-videos-item  px-1"
-                                    href="{{ url('educationvideo/'.$key.'/detail') }}">
+                                    href="{{ url('education/'.$key.'/detail') }}">
                                     <div class="section-videos-item__picture w-100"><img
                                             src="{{ asset($video['image']) }}"></div>
                                     <div class="px-3 py-1">

@@ -47,66 +47,6 @@
                                 </a>
                             @endforeach
 
-                            {{--<a class="section-videos-item shadow d-block mb-3" href="{{ url('educationvideo/vehicles') }}">
-                                <div class="section-videos-item__picture">
-                                    <img src="{{ asset('web/storage/videos/old/vehicles_1.png') }}">
-                                </div>
-                                <div class="section-videos-item__title bg-danger text-white p-2 w-100">
-                                    ယာဉ်များအား လေ့လာသင်ယူမှတ်သားခြင်း
-                                </div>
-                            </a>
-                           
-                            <a class="section-videos-item shadow d-block mb-3" href="{{ url('educationvideo/color') }}">
-                                <div class="section-videos-item__picture">
-                                    <img src="{{ asset('web/storage/videos/old/colors_1.png') }}">
-                                </div>
-                                <div class="section-videos-item__title bg-danger text-white p-2 w-100">
-                                    အရောင်များအား လေ့လာသင်ယူမှတ်သားခြင်း
-                                </div>
-                            </a>
-
-                          
-                            <a class="section-videos-item shadow d-block mb-3" href="{{ url('educationvideo/fruit') }}">
-                                <div class="section-videos-item__picture">
-                                    <img src="{{ asset('web/storage/videos/old/fruits_1.png') }}">
-                                </div>
-                                <div class="section-videos-item__title bg-danger text-white p-2 w-100">
-                                    အသီးများအား လေ့လာသင်ယူမှတ်သားခြင်း
-                                </div>
-                            </a>
-
-                          
-                            <a class="section-videos-item shadow d-block mb-3" href="{{ url('educationvideo/shapes') }}">
-                                <div class="section-videos-item__picture">
-                                    <img src="{{ asset('web/storage/videos/old/figures.png') }}">
-                                </div>
-                                <div class="section-videos-item__title bg-danger text-white p-2 w-100">
-                                    ပုံသဏ္ဌာန်အား လေ့လာသင်ယူမှတ်သားခြင်း
-                                </div>
-                            </a>
-
-
-                            <a class="section-videos-item shadow d-block mb-3"
-                                href="{{ url('educationvideo/vagetable') }}">
-                                <div class="section-videos-item__picture">
-                                    <img src="{{ asset('web/storage/videos/old/v_vegetables_3.png') }}">
-                                </div>
-                                <div class="section-videos-item__title bg-danger text-white p-2 w-100">
-                                    ဟင်းသီးဟင်းရွက်များအား လေ့လာသင်ယူမှတ်သားခြင်း
-                                </div>
-                            </a>
-                         
-
-                            <a class="section-videos-item shadow d-block mb-3"
-                                href="{{ url('educationvideo/number') }}">
-                                <div class="section-videos-item__picture">
-                                    <img src="{{ asset('web/storage/videos/old/numbers_1.png') }}">
-                                </div>
-                                <div class="section-videos-item__title bg-danger text-white p-2 w-100">
-                                    အရေအတွက်များအား လေ့လာသင်ယူမှတ်သားခြင်း
-                                </div>
-                            </a>--}}
-
 
                             <div class="tab-pane fade show active" id="example-1" role="tabpanel"
                                 aria-labelledby="example-1-tab"></div>
