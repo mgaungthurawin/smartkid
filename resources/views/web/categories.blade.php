@@ -37,17 +37,7 @@
                                 </div>
                             </a>
                         </div>
-                                                    <div class="col-6 px-1 mb-2">
-                            <a class="section-categories-item d-flex bg-4"
-                               href="{{ url('braintester') }}"
-                               style="background-image:url(../web/images/bg-12.png)">
-                                <div
-                                    class="h5 text-white font-weight-bold p-3">
-                                    ဉာဏ်စမ်း
-                                </div>
-                            </a>
-                        </div>
-                                                    <div class="col-6 px-1 mb-2">
+                        <div class="col-6 px-1 mb-2">
                             <a class="section-categories-item d-flex bg-5"
                                href="{{ url('songforkid') }}"
                                style="background-image:url(../web/images/bg-13.png)">
