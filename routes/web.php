@@ -16,7 +16,7 @@ Route::get('test', function () {
 });
 Route::get('/', 'WebController@landing');
 Route::get('/faq', 'WebController@faq');
-Route::group(['middleware' => ['cors', 'signature']], function () {
+Route::group(['middleware' => ['cors']], function () {
 	Route::get('/categories', 'WebController@categories');
 	Route::get('/horoscope', 'WebController@horoscope');
 	Route::get('/horoscope/{type}', 'WebController@horoscopeType');

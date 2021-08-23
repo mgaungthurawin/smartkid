@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta property="fb:pages" content="102476868447508" />
     <title>My Smart Kids | က႑မ်ား</title>
     <meta charset="utf-8">
     <meta name="csrf-token" content="v3TwdJDYhw8dGeKkTzypt04ggz344PZWr1t3tlmg">
